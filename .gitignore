@@ -1,0 +1,4 @@
+# 忽略的目录或者文件列表
+_site
+.sass-cache
+.idea

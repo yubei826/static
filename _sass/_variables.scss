@@ -1,0 +1,87 @@
+/**
+ * file-info: variables
+ * create-date: 2015-06-21 22:53:00
+ * author: Yu Bei
+ */
+
+
+// Grays
+$black: #2e2e2e;
+$white: #f2f4f5;
+
+// Unused
+$grayDarker: #292929; /* no */
+$grayDark: #3e4243;
+$gray: #7d7d7d; /* no */
+$grayLight: #dfdfdf; /* no */
+$grayLighter: #f3f3f3; /* no */
+
+// Accent colors
+$blue: #049cdb; /* no */
+$orange: #f39c12; /* no */
+$red: #3e4243;
+
+// Headings
+$headingsColor: $black;
+
+// Scaffolding
+$bodyBackground: #f2f4f5;
+$textColor: #3e4243;
+
+// Links
+$linkColor: #3eaccd;
+$linkColorHover: #277d97;
+
+// Borders
+$borderColor: #d6d8d9;
+
+// Tooltips
+$toolTipColor: $grayDarker;
+$toolTipTextColor: $white;
+
+// Forms
+$inputBackground: #f2f4f5;
+$inputBorder: #ccc;
+$inputBorderRadius: 3px;
+
+// Font
+$boldFontWeight: 700;
+
+
+
+$base-size: 100%;
+$base-width: 100%;
+$base-font-family: "Microsoft YaHei", Verdana, Arial, Helvetica, sans-serif;
+$base-font-style: normal;
+$base-font-size: $base-size;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$deep-black-color: #2e2e2e;
+$deep-color: #3e4243;
+$light-color: #f2f4f5;
+$light-color-opcity: rgba($light-color,0.85);
+
+
+/* link */
+$link-color: #3eaccd;
+$link-color-hover: #277d97;
+
+$link-color-h: $deep-color;
+$link-color-h-hover: $link-color;
+
+
+
+
+/* header */
+$small-header-height: 3.25em;
+$header-height: $small-header-height +2em;
+
+
+$min: min-width;
+$max: max-width;
+
+
+/* Responsive Web design */
+// 50em : 800px
+$on-laptop : 50em;
