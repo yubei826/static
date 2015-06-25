@@ -1,4 +1,9 @@
 
-@import "../_sass/bourbon/bourbon";
+@import "../_sass/YB/YB";
 
-@import "../_sass/variables";
+@import "../_sass/variables",
+        "../_sass/base",
+        "../_sass/mixins",
+        "../_sass/extends",
+        "../_sass/header";
+
