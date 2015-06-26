@@ -6,18 +6,20 @@
 ///
 /// @example scss - Usage
 ///   .element {
-///     @include border(1px solid #76cd9c);
+///     @include border-color(#a60b55 #76cd9c null #e8ae1a);
 ///   }
 ///
 /// @example css - CSS Output
 ///   .element {
-///     border: 1px solid #76cd9c;
+///     border-left-color: #e8ae1a;
+///     border-right-color: #76cd9c;
+///     border-top-color: #a60b55;
 ///   }
 ///
 /// @require {mixin} directional-property
 ///
-/// @output 'border'
+/// @output 'border-color'
 
-@mixin border($vals) {
-    @include directional-property(border, false, $vals);
+@mixin border-color($vals...) {
+    @include directional-property(border, color, $vals...);
 }

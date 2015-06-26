@@ -1,0 +1,51 @@
+
+/// Provides a quick method for targeting 'border-radius' on both corners on the side of a box.
+///
+/// @param {Number} $radii
+///   List of arguments
+///
+/// @example scss - Usage
+///   .element-one {
+///     @include border-top-radius(5px);
+///   }
+///
+///   .element-two {
+///     @include border-left-radius(3px);
+///   }
+///
+/// @example css - CSS Output
+///   .element-one {
+///     border-top-left-radius: 5px;
+///     border-top-right-radius: 5px;
+///   }
+///
+///   .element-two {
+///     border-bottom-left-radius: 3px;
+///     border-top-left-radius: 3px;
+///   }
+///
+/// @output 'border-radius'
+
+@mixin border-radius($radii: 5px) {
+    @include prefixer(border-radius, $radii, webkit ms spec);
+}
+
+@mixin border-top-radius($radii) {
+    @include prefixer(border-top-left-radius, $radii, webkit ms spec);
+    @include prefixer(border-top-right-radius, $radii, webkit ms spec);
+}
+
+@mixin border-right-radius($radii) {
+    @include prefixer(border-top-right-radius, $radii, webkit ms spec);
+    @include prefixer(border-bottom-right-radius, $radii, webkit ms spec);
+}
+
+@mixin border-bottom-radius($radii) {
+    @include prefixer(border-bottom-left-radius, $radii, webkit ms spec);
+    @include prefixer(border-bottom-right-radius, $radii, webkit ms spec);
+}
+
+@mixin border-left-radius($radii) {
+    @include prefixer(border-top-left-radius, $radii, webkit ms spec);
+    @include prefixer(border-bottom-left-radius, $radii, webkit ms spec);
+}

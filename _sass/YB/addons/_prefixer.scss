@@ -1,0 +1,55 @@
+
+/// A mixin for generating vendor prefixes on non-standardized properties.
+///
+/// @param {String} $property
+///   Property to prefix
+///
+/// @param {*} $value
+///   Value to use
+///
+/// @param {List} $prefixes
+///   Prefixes to define
+///
+/// @example scss - Usage
+///   .element {
+///     @include prefixer(border-radius, 10px, webkit ms spec);
+///   }
+///
+/// @example css - CSS Output
+///   .element {
+///     -webkit-border-radius: 10px;
+///     -moz-border-radius: 10px;
+///     border-radius: 10px;
+///   }
+///
+/// @require {variable} $prefix-for-webkit
+/// @require {variable} $prefix-for-mozilla
+/// @require {variable} $prefix-for-microsoft
+/// @require {variable} $prefix-for-opera
+/// @require {variable} $prefix-for-spec
+
+@mixin prefixer($property, $value, $prefixes: webkit moz ms o spec) {
+    @each $prefix in $prefixes {
+        @if $prefix == webkit and $prefix-for-webkit == true {
+            #{$prefix}#{$property}: $value;
+        } @else if $prefix == moz and $prefix-for-mozilla == true {
+            #{$prefix}#{$property}: $value;
+        } @else if $prefix == ms and $prefix-for-microsoft == true {
+            #{$prefix}#{$property}: $value;
+        } @else if $prefix == o and $prefix-for-opera == true {
+            #{$prefix}#{$property} : $value;
+        } @else if $prefix == spec and $prefix-for-spec == true {
+            #{$property}: $value;
+        } @else {
+            @warn "Unrecognized prefix: #{$prefix}";
+        }
+    }
+}
+
+@mixin disable-prefix-for-all() {
+    $prefix-for-webkit:    false !global;
+    $prefix-for-mozilla:   false !global;
+    $prefix-for-microsoft: false !global;
+    $prefix-for-opera:     false !global;
+    $prefix-for-spec:      false !global;
+}
