@@ -26,3 +26,20 @@
     #{$property} : #{$Size}px;
     #{$property} : #{rem($Size)};
 }
+
+
+@mixin btn($primaryColor, $secondaryColor) {
+    font-weight: $boldFontWeight;
+    display: inline-block;
+    text-transform: uppercase;
+    border: 1px solid $primaryColor;
+    color: $primaryColor;
+    @include padding(0.55m 0.875em);
+    @include border-radius(3px);
+    @include transition(all .2s ease-in-out);
+    &:hover {
+        background-color: $primaryColor;
+        color: $secondaryColor;
+        text-decoration: none;
+    }
+}

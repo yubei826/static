@@ -8,9 +8,12 @@
     background: $white;
     background: rgba(242,244,245,0.85);
     @include position(absolute, 0 null null null);
-    @include size(100% 3.25em);
+    @include size(100% $small-header-height);
     @include box-shadow(0 0 5px 0 rgba(0,0,0,0.25));
     z-index: 1000;
+    @include mediaQuery($min, $on-laptop){
+        height: $header-height;
+    }
     .toggle-menu{
         display: inline-block;
         //padding: 0.75rem 0.375rem;
@@ -23,9 +26,7 @@
         @include border(none);
         @include position(absolute, rem(9.6) null null rem(9.6));
         @include mediaQuery($min,$on-laptop){
-            &{
-                display: none;
-            }
+            display: none;
         }
         span{
             display: inline-block;
@@ -73,20 +74,151 @@
             background: url(../img/logo.jpg) center center no-repeat;
             background-size: 35px 35px;
             @include mediaQuery($min, $on-laptop){
-                &{
-                    @include size(60px 60px);
-                    background-size: 60px 60px;
-                    @include position(null, 0 null null 0);
-                }
+                @include size(60px 60px);
+                background-size: 60px 60px;
+                @include position(null, 0 null null 0);
             }
             &:after{
                 content: "Yu Bei";
-                font-size: 100%;
+                font-size: 1.3rem;
                 font-family: $base-font-family;
-                line-height: 1.8;
+                line-height: 1;
+                color: $grayDark;
+                font-weight: $boldFontWeight;
                 @include size(70px 24px);
-                @include position(absolute, 7px null null 42px);
+                @include position(absolute, 7px null null 70px);
             }
+        }
+    }
+    ul.toggle-btns{
+        @include position(absolute, 0.6em 3.5em null null);
+        z-index: 1001;
+        @include mediaQuery($min, $on-laptop){
+            display: none;
+        }
+        li{
+            font-size: 1.25em;
+            display: inline;
+            @include margin(0 0.25em);
+            a{
+                color: $grayDark;
+                display: inline-block;
+                @include padding(0.25em 0.4em);
+                @include border-radius(3px);
+                line-height: 0;
+            }
+        }
+    }
+    #menu-primary{
+        width: $base-width;
+        background: $grayDark;
+        overflow: hidden;
+        z-index: 100;
+        @include position(absolute, -22em null null null);
+        @include transition(all 0.3s ease-in-out);
+        @include padding(0.25em 0);
+        @include mediaQuery($min,$on-laptop){
+            top: 1.5em;
+            background: transparent;
+        }
+        ul{
+            //width: 100%;
+            @include mediaQuery($min,$on-laptop){
+                text-align: center;;
+            }
+            li{
+                @include convert-px-rem(font-size,14);
+                font-weight: $boldFontWeight;
+                @include position(relative);
+                @include margin(0);
+                border-bottom: 1px solid #4a4f50;
+                text-transform: uppercase;
+                @include mediaQuery($min,$on-laptop){
+                    display: inline-block;
+                    @include margin(0 1em);
+                    border: none;
+                }
+                &.mobile{
+                    @include mediaQuery($min,$on-laptop){
+                        display: none;
+                    }
+                }
+                &.important{
+                    font-size: $small-font-size;
+                    @include margin(-0.0625em 5em null null);
+                    @include position(absolute, 0.25em -9999px null null);
+                    @include mediaQuery($min,$on-laptop){
+                        right: 0;
+                    }
+                    a{
+                        @include btn($grayDark, $white);
+                    }
+                }
+                a{
+                    color: $white;
+                    display: block;
+                    @include border-radius(3px);
+                    @include padding(0.6785em 1em);
+                    &{
+                        @include mediaQuery($min,$on-laptop){
+                            color: $grayDark;
+                            @include padding(0.25em 0.5em);
+                            &:hover{
+                                background-color: $grayDark;
+                                color: $white;
+                            }
+                        }
+                    }
+                    &:hover{
+                        background-color: $black;
+                        color: $white;
+                    }
+                }
+
+            }
+        }
+    }
+    .searchform{
+        margin: 0;
+        z-index: 1002;
+        @include position(absolute, 0.25em 0 null null);
+        @include mediaQuery($min, $on-laptop){
+            top: 1.375em;
+        }
+        input[type="search"]{
+            text-indent: 40px;
+            cursor: pointer;
+            border: none;
+            padding: .125em 0 0 0;
+            font-size: 1em;
+            background: url(../img/icons/search.svg) 0.25em 50% no-repeat;
+            color: $white;
+            margin: 0;
+            -webkit-appearance: none;
+            outline: none;
+            @include size(2.6875em);
+            @include transition(all 0.5s ease-in-out);
+            @include border-left-radius(3px);
+            @include box-sizing(content-box);
+            @include transition(all 0.5s ease-in-out);
+            @include placeholder(){
+                color: $white;
+                font-weight: $base-font-style;
+            }
+            &:focus{
+                width: 20em;
+                outline: none;
+                background: $grayDark url(../img/icons/search-focus.svg) 0.875em 50% no-repeat;
+                color: $white;
+                cursor: text;
+                @include transition(all 0.5s ease-in-out);
+                @include mediaQuery($min, $on-laptop){
+                    width: 30em;
+                }
+            }
+        }
+        input[type="submit"]{
+            display: none;
         }
     }
 }

@@ -55,3 +55,15 @@ body{
         to {opacity: 1}
     }
 }
+
+.btn, .button {
+    @include btn($grayDark, $white);
+}
+
+input#submit {
+    border: 1px solid #ccc;
+}
+
+.btn.white, .button.white {
+    @include btn($white, $grayDark);
+}
