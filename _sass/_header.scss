@@ -5,5 +5,88 @@
  */
 
 .header{
-
+    background: $white;
+    background: rgba(242,244,245,0.85);
+    @include position(absolute, 0 null null null);
+    @include size(100% 3.25em);
+    @include box-shadow(0 0 5px 0 rgba(0,0,0,0.25));
+    z-index: 1000;
+    .toggle-menu{
+        display: inline-block;
+        //padding: 0.75rem 0.375rem;
+        cursor: pointer;
+        user-select: none;
+        background: transparent;
+        z-index: 1000;
+        @include padding(0);
+        @include transition(0.3s);
+        @include border(none);
+        @include position(absolute, rem(9.6) null null rem(9.6));
+        @include mediaQuery($min,$on-laptop){
+            &{
+                display: none;
+            }
+        }
+        span{
+            display: inline-block;
+            @include convert-px-rem(width,24);
+            @include convert-px-rem(height,3.42864);
+            background: $grayDark;
+            @include border-radius(rem(1.71424em));
+            @include transition(0.2s);
+            @include position(relative);
+            &:before{
+                @include convert-px-rem(top,6);
+            }
+            &:after{
+                @include convert-px-rem(top,-6);
+            }
+            &:before, &:after{
+                display: inline-block;
+                background: $grayDark;
+                content: '';
+                @include size(rem(24em) rem(3.42864em));
+                @include position(absolute, null null null 0);
+                @include border-radius(rem(1.71424));
+                @include transition(0.2s);
+                @include transform-origin(rem(1.71424) center);
+            }
+        }
+        @at-root {
+            .screen-reader-text{
+                @extend %hide-text;
+            }
+        }
+    }
+    .site-title{
+        font-size: 1em;
+        z-index: 1000;
+        @include margin(0);
+        @include position(absolute);
+        @include size(205px null);
+        @include padding(0.8125em 0.8125em 0);
+        a{
+            @extend %hide-text;
+            @include size(35px 35px);
+            @include position(relative, -5px null null 35px);
+            display: block;
+            background: url(../img/logo.jpg) center center no-repeat;
+            background-size: 35px 35px;
+            @include mediaQuery($min, $on-laptop){
+                &{
+                    @include size(60px 60px);
+                    background-size: 60px 60px;
+                    @include position(null, 0 null null 0);
+                }
+            }
+            &:after{
+                content: "Yu Bei";
+                font-size: 100%;
+                font-family: $base-font-family;
+                line-height: 1.8;
+                @include size(70px 24px);
+                @include position(absolute, 7px null null 42px);
+            }
+        }
+    }
 }

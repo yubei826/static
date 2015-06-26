@@ -31,13 +31,13 @@
 @mixin prefixer($property, $value, $prefixes: webkit moz ms o spec) {
     @each $prefix in $prefixes {
         @if $prefix == webkit and $prefix-for-webkit == true {
-            #{$prefix}#{$property}: $value;
+            -#{$prefix}-#{$property}: $value;
         } @else if $prefix == moz and $prefix-for-mozilla == true {
-            #{$prefix}#{$property}: $value;
+            -#{$prefix}-#{$property}: $value;
         } @else if $prefix == ms and $prefix-for-microsoft == true {
-            #{$prefix}#{$property}: $value;
+            -#{$prefix}-#{$property}: $value;
         } @else if $prefix == o and $prefix-for-opera == true {
-            #{$prefix}#{$property} : $value;
+            -#{$prefix}-#{$property} : $value;
         } @else if $prefix == spec and $prefix-for-spec == true {
             #{$property}: $value;
         } @else {

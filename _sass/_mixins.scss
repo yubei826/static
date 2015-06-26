@@ -1,0 +1,28 @@
+/**
+ * file-info: mixin
+ * create-date: 2015-06-25 12:29:00
+ * author: Yu Bei
+ */
+
+
+// mediaQuery
+@mixin mediaQuery($constraint, $viewport1, $viewport2: null) {
+    @if $constraint == $min {
+        @media screen and ($min: $viewport1) {
+            @content;
+        }
+    } @else if $constraint == $max {
+        @media screen and ($max: $viewport1) {
+            @content;
+        }
+    } @else {
+        @media screen and ($min: $viewport1) and ($max: $viewport2) {
+            @content;
+        }
+    }
+}
+
+@mixin convert-px-rem($property, $Size) {
+    #{$property} : #{$Size}px;
+    #{$property} : #{rem($Size)};
+}

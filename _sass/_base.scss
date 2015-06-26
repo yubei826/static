@@ -1,0 +1,57 @@
+/**
+ * file-info: base
+ * create-date: 2015-06-26 13:24:00
+ * author: Yu Bei
+ */
+
+* {
+    &, &:before, &:after {
+        @include box-sizing;
+    }
+}
+
+a, button{
+    color: $linkColor;
+    text-decoration: none;
+    @include transition(all 0.2s ease-in-out);
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: $boldFontWeight;
+    color: $grayDark;
+    text-rendering: optimizelegibility;
+    margin-top: 0;
+    @include convert-px-rem(margin-bottom, 24);
+}
+
+h1, .h1{
+    @include convert-px-rem(font-size,40);
+    line-height: 1.2;
+    @include mediaQuery($min,$on-laptop){
+        &{
+            @include convert-px-rem(font-size, 48);
+        }
+    }
+}
+
+
+html{
+    -webkit-font-smoothing: antialiased;
+    background-color: $white;
+    -ms-text-size-adjust: $base-size;
+    -webkit-text-size-adjust: $base-size;
+}
+
+body{
+    font-family: $base-font-family;
+    font-size: $base-size;
+    line-height: $base-line-height;
+    font-style: $base-font-style;
+    color: $textColor;
+    background-color: $bodyBackground;
+    @include animation(fontfix 0.1s linear 0.1s 1);
+    @include keyframes(fontfix){
+        from {opacity: 1}
+        to {opacity: 1}
+    }
+}
