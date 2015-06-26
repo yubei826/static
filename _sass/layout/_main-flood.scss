@@ -1,0 +1,46 @@
+
+/**
+ * file-info: flood
+ * create-date: 2015-06-27 03:21:00
+ * author: Yu Bei
+ */
+
+.flood {
+    position: relative;
+    z-index: 20;
+    background: $white;
+    text-align: center;
+    @include clearfix;
+    section{
+        width: $base-width;
+        padding: 4em 1.5% 2em 1.5%;
+        border-bottom: 1px solid #d6d8d9;
+        @include mediaQuery($on-laptop1){
+            width: 25%;
+            float: left;
+            border-bottom: none;
+            border-right: 1px solid #d6d8d9;
+        }
+        .svg{
+            @include transition(all 0.2s ease-in-out);
+        }
+        h1{
+            @include convert-px-rem(font-size, 22);
+        }
+        svg, img{
+            @include size(90px);
+        }
+        a:hover{
+            color: $linkColor;
+            text-decoration: none;
+        }
+        &:last-child{
+            border-right: none;
+        }
+        &:hover{
+            .svg{
+                fill: $linkColor;
+            }
+        }
+    }
+}

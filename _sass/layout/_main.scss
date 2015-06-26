@@ -1,0 +1,13 @@
+
+/**
+ * file-info: main
+ * create-date: 2015-06-27 01:12:00
+ * author: Yu Bei
+ */
+
+.home .content{
+    margin-top: $small-header-height;
+    @include mediaQuery($on-laptop1){
+        margin-top: $header-height;
+    }
+}

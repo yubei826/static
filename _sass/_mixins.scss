@@ -6,6 +6,66 @@
 
 
 // mediaQuery
+@mixin mediaQuery($screen-sizi, $mode: min-width){
+    /*
+    $sizi: null;
+    @if $screen-sizi == 320 {
+        $sizi: 20em;
+    } @else if $screen-sizi == 480 {
+        $sizi: 30em;
+    } @else if $screen-sizi == 640 {
+        $sizi: 40em;
+    } @else if $screen-sizi == 800 {
+            $sizi: 50em;
+    } @else if $screen-sizi == 960 {
+        $sizi: 60em;
+    } @else if $screen-sizi == 1040 {
+        $sizi: 65em;
+    } @else if $screen-sizi == 1120 {
+        $sizi: 70em;
+    } @else if $screen-sizi == 1280 {
+        $sizi: 80em;
+    } @else if $screen-sizi == 1440 {
+        $sizi: 90em;
+    } @else if $screen-sizi == 1600 {
+        $sizi: 100em;
+    } @else if $screen-sizi == 1760 {
+        $sizi: 110em;
+    } @else if $screen-sizi == 1920 {
+        $sizi: 120em;
+    } @else if $screen-sizi == 2080 {
+        $sizi: 130em;
+    } @else{
+        $sizi: $screen-sizi;
+    }
+    */
+
+    $w1: null;
+    $w2: null;
+    @if length($screen-sizi) > 1 {
+        $w2: em(nth($screen-sizi, 2));
+        @if type_of(nth($screen-sizi, 1)) == "null" {
+            @media screen and (max-width: $w2) {
+                @content;
+            }
+        } @else {
+            $w1: em(nth($screen-sizi, 1));
+            @media screen and (min-width: $w1) and (max-width: $w2) {
+                @content;
+            }
+        }
+    } @else {
+        $w1: em($screen-sizi);
+        @media screen and ($mode: $w1) {
+            @content;
+        }
+    }
+
+
+}
+
+
+/*
 @mixin mediaQuery($constraint, $viewport1, $viewport2: null) {
     @if $constraint == $min {
         @media screen and ($min: $viewport1) {
@@ -21,6 +81,10 @@
         }
     }
 }
+*/
+
+
+
 
 @mixin convert-px-rem($property, $Size) {
     #{$property} : #{$Size}px;
@@ -34,7 +98,7 @@
     text-transform: uppercase;
     border: 1px solid $primaryColor;
     color: $primaryColor;
-    @include padding(0.55m 0.875em);
+    @include padding(0.55em 0.875em);
     @include border-radius(3px);
     @include transition(all .2s ease-in-out);
     &:hover {

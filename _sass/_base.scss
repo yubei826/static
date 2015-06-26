@@ -24,14 +24,28 @@ h1, h2, h3, h4, h5, h6{
     @include convert-px-rem(margin-bottom, 24);
 }
 
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
+    color: $grayDark;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover{
+    color: $linkColor;
+}
+
 h1, .h1{
     @include convert-px-rem(font-size,40);
     line-height: 1.2;
-    @include mediaQuery($min,$on-laptop){
+    @include mediaQuery($on-laptop1){
         &{
             @include convert-px-rem(font-size, 48);
         }
     }
+}
+
+p{
+    line-height: 1.6875;
+    margin-top: 0;
+    @include convert-px-rem(margin-bottom, 24);
 }
 
 
@@ -66,4 +80,18 @@ input#submit {
 
 .btn.white, .button.white {
     @include btn($white, $grayDark);
+}
+
+
+@include font-face(YB,'../font/YB');
+.font{
+    font-family: YB;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

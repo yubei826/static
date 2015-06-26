@@ -34,52 +34,118 @@
         <script src="js/public//html5shiv.min.js"></script>
     <![endif]-->
 </head>
-<body>
-<div class="wrapper">
-    <header class="header" role="header">
-        <button class="toggle-menu" type="button" role="button" aria-label="Toggle Navigation">
-            <span class="screen-reader-text">Navigation</span>
-        </button>
-        <h1 class="site-title">
-            <a href="http://yubei.me" title="Yu Bei">Yu Bei</a>
-        </h1>
-        <ul class="toggle-btns">
-            <li class="tel">
-                <a href="tel:12345678"><i class="icon-phone"></i></a>
-            </li>
-            <li class="map">
-                <a href="http://map.baidu.com"><i class="icon-map-marker"></i></a>
-            </li>
-        </ul>
-        <nav id="menu-primary" class="menu" role="navigation" aria-label="Primary Menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-            <ul id="menu-primary-items" class="menu-items">
-                <li>
-                    <a href="###">服务信息</a></li>
-                <li>
-                    <a href="###">团队信息</a></li>
-                <li>
-                    <a href="###">文章列表</a></li>
-                <li>
-                    <a href="###">关于我们</a></li>
-                <li>
-                    <a href="###">友情链接</a></li>
-                <li class="important">
-                    <a href="###">加入我们</a>
+<body class="home">
+    <div class="wrapper">
+        <header class="header" role="header">
+            <button class="toggle-menu" type="button" role="button" aria-label="Toggle Navigation">
+                <span class="screen-reader-text">Navigation</span>
+            </button>
+            <h1 class="site-title">
+                <a class="logo" href="http://yubei.me" title="Yu Bei">Yu Bei</a>
+            </h1>
+            <ul class="toggle-btns">
+                <li class="tel">
+                    <a href="tel:12345678"><i class="font">&#xe61f</i></a>
                 </li>
-                <li class="mobile">
-                    <a href="###">加入我们</a>
+                <li class="map">
+                    <a href="http://map.baidu.com"><i class="font">&#xe61c</i></a>
                 </li>
             </ul>
-        </nav>
-        <div class="searchform" role="search">
-            <form method="get" class="search-form" action="###">
-                <div>
-                    <input class="search-text" type="search" name="s" placeholder="搜索: 输入关键字..." onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
-                    <input class="search-submit" name="submit" type="submit" value="Search">
+            <nav id="menu-primary" class="menu" role="navigation" aria-label="Primary Menu" itemscope="itemscope" itemtype="http://yubei.me/SiteNavigationElement">
+                <ul id="menu-primary-items" class="menu-items">
+                    <li>
+                        <a href="###">服务信息</a></li>
+                    <li>
+                        <a href="###">团队信息</a></li>
+                    <li>
+                        <a href="###">文章列表</a></li>
+                    <li>
+                        <a href="###">关于我们</a></li>
+                    <li>
+                        <a href="###">友情链接</a></li>
+                    <li class="important">
+                        <a href="###">加入我们</a>
+                    </li>
+                    <li class="mobile">
+                        <a href="###">加入我们</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="searchform" role="search">
+                <form method="get" class="search-form" action="###">
+                    <div>
+                        <input class="search-text" type="search" name="s" placeholder="搜索: 输入关键字..." onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
+                        <input class="search-submit" name="submit" type="submit" value="Search">
+                    </div>
+                </form>
+            </div>
+        </header>
+        <div class="content" role="main">
+            <section class="warm-welcome">
+                <img src="img/structure/steambath.jpg">
+                <div class="marquee">
+                    <h1>欢迎大家访问我的网站！</h1>
+                    <p>一个好的网站是独一无二的，引人注目的，本站是采用响应式设计，支持手机，平板和PC等</p>
+                    <a href="###" class="button white">这是如何做到的？</a> <a href="###" class="button white">看看我的简介</a>
                 </div>
-            </form>
+            </section>
+            <section class="flood">
+                <section class="service">
+                    <a href="###">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+                            <path class="svg roller" fill="#231F20" d="M54.006 13.202V10.1c0-2.705-2.193-4.898-4.898-4.898H16.906c-2.705 0-4.896 2.193-4.896 4.898v3.102h-.918c-2.258 0-4.086 1.83-4.086 4.087v6.844c0 2.257 1.828 4.087 4.086 4.087h17.164v-.005h1.662c1.15 0 2.088.937 2.088 2.087v6.9h-3.998v24h10v-24h-4.002v-6.9c0-2.257-1.83-4.087-4.088-4.087H27.44v.006H11.09c-1.15 0-2.085-.936-2.085-2.086V17.29c0-1.15.936-2.088 2.086-2.088h.92v3.103c0 2.705 2.19 4.897 4.895 4.897h32.2c2.706 0 4.9-2.192 4.9-4.897v-3.103h2v-2h-2zm-17.998 46h-6v-20h6v20zm15.998-40.897c0 1.598-1.3 2.897-2.898 2.897H16.906c-1.598 0-2.896-1.3-2.896-2.897V10.1c0-1.598 1.3-2.897 2.896-2.897h32.2c1.6 0 2.9 1.3 2.9 2.898v8.205z"></path>
+                        </svg>
+                    </a>
+                    <h1><a href="###">设计</a></h1>
+                    <p>你看到的是测试文字，绝对是测试文字，仅用来测试的问题，显示的文字，你看到的是测试文字，绝对是测试文字，仅用来测试的问题，显示的文字。</p>
+                </section>
+                <section class="service">
+                    <a href="###">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+                            <g class="svg signage" fill="#1C2021">
+                                <path d="M32.5 23.338h13.997l6-7.05-6-6.95H32.5V5.33h-2V9.34H12.49v14H30.5v1.993H16.49l-6 6.95 6 7.05H30.5v20h2v-20h17.997v-14H32.5V23.34zm-18.01-2v-10h31.09l4.282 4.958-4.29 5.042H14.49zm34.007 5.993v10H17.414l-4.29-5.04 4.28-4.958h31.093zM16.474 13.33h10v2h-10zM36.48 29.34h10v2h-10z"></path>
+                            </g>
+                        </svg>
+                    </a>
+                    <h1><a href="###">策略</a></h1>
+                    <p>你看到的是测试文字，绝对是测试文字，仅用来测试的问题，显示的文字，你看到的是测试文字，绝对是测试文字，仅用来测试的问题，显示的文字。</p>
+                </section>
+                <section class="service">
+                    <a href="###">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+                            <g class="svg slider" fill="#231F20">
+                                <path d="M54.107 14.13c0-2.76-2.24-4.998-5-4.998-2.762 0-5 2.237-5 5 0 2.417 1.718 4.435 4 4.898v34.102h2V19.03c2.283-.464 4-2.48 4-4.9zm-5 3c-1.654 0-3-1.345-3-3 0-1.652 1.346-2.998 3-2.998s3 1.346 3 3c0 1.653-1.345 3-3 3zM14.107 47.232v-34.1h-2v34.1c-2.282.465-4 2.48-4 4.9 0 2.76 2.24 5 5 5s5-2.24 5-5c0-2.42-1.717-4.436-4-4.9zm-1 7.9c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.345 3-3 3zM32.107 28.232v-15.1h-2v15.1c-2.282.465-4 2.482-4 4.9s1.718 4.436 4 4.9v15.1h2v-15.1c2.282-.465 4-2.482 4-4.9s-1.717-4.436-4-4.9zm-1 7.9c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.345 3-3 3z"></path>
+                            </g>
+                        </svg>
+                    </a>
+                    <h1><a href="###">开发</a></h1>
+                    <p>你看到的是测试文字，绝对是测试文字，仅用来测试的问题，显示的文字，你看到的是测试文字，绝对是测试文字，仅用来测试的问题，显示的文字。</p>
+                </section>
+                <section class="service">
+                    <a href="###">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+                            <path class="svg graph" fill="#1C2021" d="M53.853 5.182c-2.757 0-5 2.242-5 4.998 0 1.737.893 3.27 2.24 4.165L41.64 39.263c-.262-.043-.525-.08-.798-.08-1.198 0-2.284.44-3.146 1.145l-9.46-7.813c.373-.7.604-1.486.604-2.333 0-2.757-2.243-5-5-5s-5 2.243-5 5c0 1.49.668 2.814 1.705 3.73l-10.08 17.56c-.51-.176-1.044-.29-1.61-.29-2.76 0-5.002 2.24-5.002 4.997 0 2.758 2.243 5.002 5 5.002 2.758 0 5-2.244 5-5.003 0-1.47-.65-2.78-1.663-3.696l10.09-17.577c.494.164 1.012.274 1.56.274 1.187 0 2.263-.432 3.12-1.124l9.47 7.82c-.362.694-.588 1.47-.588 2.305 0 2.758 2.243 5 5 5s5-2.242 5-5c0-1.773-.936-3.324-2.332-4.213l9.44-24.877c.293.054.593.09.902.09 2.757 0 5-2.243 5-5 0-2.756-2.243-4.998-5-4.998zm-45 54c-1.653 0-3-1.347-3-3.003 0-1.654 1.347-3 3-3 1.654 0 3 1.346 3 3 0 1.655-1.346 3.002-3 3.002zm14.987-26c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3zm17.002 14c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3zm13.01-34c-1.653 0-3-1.347-3-3.002 0-1.653 1.347-2.998 3-2.998s3 1.345 3 2.998c0 1.655-1.345 3.002-3 3.002z"></path>
+                        </svg>
+                    </a>
+                    <h1><a href="###">维护</a></h1>
+                    <p>你看到的是测试文字，绝对是测试文字，仅用来测试的问题，显示的文字，你看到的是测试文字，绝对是测试文字，仅用来测试的问题，显示的文字。</p>
+                </section>
+            </section>
         </div>
-    </header>
-</div>
+        <footer class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://yubei.me/WPFooter">
+            <div class="footer-content">
+                <p class="engage">
+                    <a href="###">练习我们</a>
+                    <a href="###">地图查找</a>
+                    <a href="###">@QQ空间</a>
+                </p>
+                <p class="copyright">
+                    ©2015 Yu Bei, Inc. <a href="###">Don’t be creepy</a>.
+                </p>
+                <a class="logo" href="###"><i class="font">&#xe613</i><span>Yu Bei</span></a>
+            </div>
+        </footer>
+        <!--<script type="text/javascript" src="http://tajs.qq.com/stats?sId=46610749" charset="UTF-8"></script>-->
+    </div>
 </body>
 </html>

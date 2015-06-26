@@ -11,7 +11,7 @@
     @include size(100% $small-header-height);
     @include box-shadow(0 0 5px 0 rgba(0,0,0,0.25));
     z-index: 1000;
-    @include mediaQuery($min, $on-laptop){
+    @include mediaQuery($on-laptop1){
         height: $header-height;
     }
     .toggle-menu{
@@ -20,13 +20,16 @@
         cursor: pointer;
         user-select: none;
         background: transparent;
-        z-index: 1000;
+        z-index: 1001;
         @include padding(0);
         @include transition(0.3s);
         @include border(none);
         @include position(absolute, rem(9.6) null null rem(9.6));
-        @include mediaQuery($min,$on-laptop){
+        @include mediaQuery($on-laptop1){
             display: none;
+        }
+        &:focus{
+            outline: 0;
         }
         span{
             display: inline-block;
@@ -73,27 +76,30 @@
             display: block;
             background: url(../img/logo.jpg) center center no-repeat;
             background-size: 35px 35px;
-            @include mediaQuery($min, $on-laptop){
+            @include mediaQuery($on-laptop1){
                 @include size(60px 60px);
                 background-size: 60px 60px;
                 @include position(null, 0 null null 0);
             }
             &:after{
                 content: "Yu Bei";
-                font-size: 1.3rem;
+                font-size: 0.6rem;
                 font-family: $base-font-family;
-                line-height: 1;
+                line-height: 1.5em;
                 color: $grayDark;
                 font-weight: $boldFontWeight;
-                @include size(70px 24px);
-                @include position(absolute, 7px null null 70px);
+                @include size(6em 1.5em);
+                @include position(absolute, 0.3em null null 3.5em);
+                @include mediaQuery($on-laptop1){
+                    font-size: 1.3rem;
+                }
             }
         }
     }
     ul.toggle-btns{
         @include position(absolute, 0.6em 3.5em null null);
         z-index: 1001;
-        @include mediaQuery($min, $on-laptop){
+        @include mediaQuery($on-laptop1){
             display: none;
         }
         li{
@@ -117,13 +123,13 @@
         @include position(absolute, -22em null null null);
         @include transition(all 0.3s ease-in-out);
         @include padding(0.25em 0);
-        @include mediaQuery($min,$on-laptop){
+        @include mediaQuery($on-laptop1){
             top: 1.5em;
             background: transparent;
         }
         ul{
             //width: 100%;
-            @include mediaQuery($min,$on-laptop){
+            @include mediaQuery($on-laptop1){
                 text-align: center;;
             }
             li{
@@ -133,13 +139,13 @@
                 @include margin(0);
                 border-bottom: 1px solid #4a4f50;
                 text-transform: uppercase;
-                @include mediaQuery($min,$on-laptop){
+                @include mediaQuery($on-laptop1){
                     display: inline-block;
                     @include margin(0 1em);
                     border: none;
                 }
                 &.mobile{
-                    @include mediaQuery($min,$on-laptop){
+                    @include mediaQuery($on-laptop1){
                         display: none;
                     }
                 }
@@ -147,7 +153,7 @@
                     font-size: $small-font-size;
                     @include margin(-0.0625em 5em null null);
                     @include position(absolute, 0.25em -9999px null null);
-                    @include mediaQuery($min,$on-laptop){
+                    @include mediaQuery($on-laptop1){
                         right: 0;
                     }
                     a{
@@ -160,9 +166,9 @@
                     @include border-radius(3px);
                     @include padding(0.6785em 1em);
                     &{
-                        @include mediaQuery($min,$on-laptop){
+                        @include mediaQuery($on-laptop1){
                             color: $grayDark;
-                            @include padding(0.25em 0.5em);
+                            @include padding(0.45em 0.6em);
                             &:hover{
                                 background-color: $grayDark;
                                 color: $white;
@@ -182,7 +188,7 @@
         margin: 0;
         z-index: 1002;
         @include position(absolute, 0.25em 0 null null);
-        @include mediaQuery($min, $on-laptop){
+        @include mediaQuery($on-laptop1){
             top: 1.375em;
         }
         input[type="search"]{
@@ -212,7 +218,7 @@
                 color: $white;
                 cursor: text;
                 @include transition(all 0.5s ease-in-out);
-                @include mediaQuery($min, $on-laptop){
+                @include mediaQuery($on-laptop1){
                     width: 30em;
                 }
             }
